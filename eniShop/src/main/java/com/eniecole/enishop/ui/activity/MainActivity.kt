@@ -1,4 +1,4 @@
-package com.eniecole.enishop
+package com.eniecole.enishop.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
