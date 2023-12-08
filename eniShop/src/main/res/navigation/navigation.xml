@@ -17,5 +17,9 @@
         android:id="@+id/detailArticleFragment"
         android:name="com.eniecole.enishop.ui.fragments.DetailArticleFragment"
         android:label="fragment_detail_article"
-        tools:layout="@layout/fragment_detail_article" />
+        tools:layout="@layout/fragment_detail_article" >
+        <argument
+            android:name="article"
+            app:argType="com.eniecole.enishop.bo.Article" />
+    </fragment>
 </navigation>
