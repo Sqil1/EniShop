@@ -10,12 +10,12 @@ object ArticleRepository {
     private val articleDaoMem = DaoFactory.createArticleDao(DaoType.MEMORY)
     private val articleDaoNet = DaoFactory.createArticleDao(DaoType.NETWORK)
 
-    fun getArticleById(id: Long): Article {
+    fun getArticle(id: Long): Article {
         return articleDaoMem.selectById(id)
     }
-
-    fun addNewArticle(article: Article): Long {
+    fun addArticle(article: Article): Long {
         return articleDaoMem.addNewOne(article)
     }
+    fun getAllArticles() = articleDaoMem.selectAll()
 
 }

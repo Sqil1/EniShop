@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter
 
 
 @Parcelize
-data class Article (
+data class Article(
     val id:Long = 0L,
     var title: String,
     var price: Double,

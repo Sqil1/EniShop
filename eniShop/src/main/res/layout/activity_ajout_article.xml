@@ -14,60 +14,94 @@
         android:layout_height="match_parent"
         tools:context=".ui.activity.AjoutArticleActivity">
 
-        <EditText
-            android:id="@+id/editTextTitle"
-            android:layout_width="409dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="32dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="@{article.title}"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Titre"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/editTextDescription"
-            android:layout_width="409dp"
-            android:layout_height="59dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTitre"
+                android:text="@={article.title}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="@{article.description}"
+            android:layout_marginEnd="16dp"
+            android:hint="Description"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.567"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
-        <EditText
-            android:id="@+id/editTextPrice"
-            android:layout_width="409dp"
-            android:layout_height="59dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextDescription"
+                android:layout_width="match_parent"
+                android:text="@={article.description}"
+
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="@{article.price + `e`}"
+            android:layout_marginEnd="16dp"
+            android:hint="Prix"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
 
-        <EditText
-            android:id="@+id/editTextDate"
-            android:layout_width="409dp"
-            android:layout_height="59dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="@{article.dateSortie.month + `/` + article.dateSortie.year}"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPrix"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:inputType="number|numberDecimal"
+                android:text="@{article.price + `€`}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Sortie initiale"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPrice" />
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextSortieInitiale"
+                android:layout_width="match_parent"
+                android:text="@{article.dateSortie.monthValue + `/`+ article.dateSortie.year}"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/buttonSave"
-            android:layout_width="409dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:text="Sauvegarder"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="1dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
